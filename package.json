@@ -1,0 +1,22 @@
+{
+	"name": "forge-ts",
+	"version": "0.0.0",
+	"type": "module",
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"bin": {
+		"forge-ts": "dist/cli.cjs"
+	},
+	"devDependencies": {
+		"@types/node": "^18.15.5",
+		"set-defaults": "^0.0.1",
+		"tsup": "^6.7.0",
+		"typescript": "^4.9.5"
+	},
+	"scripts": {
+		"prepare": "set-defaults .vscode",
+		"build": "tsup --entry src/index.ts --entry src/cli.ts --dts --format esm,cjs",
+		"dev": "tsup --entry src/index.ts --entry src/cli.ts --dts --watch --format esm,cjs"
+	}
+}
