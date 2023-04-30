@@ -45,6 +45,8 @@ if (output_type !== 'ts' && output_type !== 'js' && output_type !== 'js,ts' && o
 async function main() {
   try {
     fs.rmSync(output_path, { recursive: true })
+  } catch { }
+  try {
     fs.mkdirSync(output_path, { recursive: true })
   } catch { }
   const artifact_folder = options.a;
